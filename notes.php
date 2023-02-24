@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Quincy's Notes</title>
   <link rel="stylesheet" href="style.css">
+  <script src="effects.js"></script>
 </head>
 <body>
   <header>

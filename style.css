@@ -2,6 +2,8 @@
 body {
   font-family: sans-serif;
   margin: 0;
+  color: white;
+  background-color: black;
 }
 
 /* Header styles */
@@ -51,14 +53,23 @@ nav .active a {
 
 /* Main styles */
 main {
-  padding: 2rem;
-  margin: 2rem;
-  outline-style: double;
+  height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  background-image: url("/resources/network.png");
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position-x: center;
+  text-align: center;
+  padding-bottom: 5rem;
 }
 
 main h2 {
   font-size: 2rem;
   margin-top: 0;
+  padding-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 main ul {
@@ -78,6 +89,12 @@ main a {
 
 main a:hover {
   text-decoration: underline;
+}
+
+.folders-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 8rem;
 }
 
 .photo img {
@@ -136,6 +153,7 @@ main a:hover {
   width: auto;
   object-fit: contain;
   margin: 10px;
+  border-radius: 5%;
   /* Add some margin to each gif */
 }
 

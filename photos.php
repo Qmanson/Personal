@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>My Photos</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="effects.js"></script>
 </head>
 <body>
 	<header>
@@ -41,7 +42,7 @@
 					foreach ($files as $file) {
 						if ($file != '.' && $file != '..') {
 							echo "<div class='photo'>";
-							echo "<img src='$dir/$file'/>";
+							echo "<img src='$dir/$file' loading='lazy'/>";
 							echo "</div>";
 						}
 					}
@@ -92,6 +93,8 @@
 		});
 		});
 	</script>
-
+	  <footer>
+	2023 Quincy's Page 
+  </footer>
 </body>
 </html>
