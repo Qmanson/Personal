@@ -21,9 +21,6 @@
 	<main>
 		<h2>My Photos</h2>
 
-		<button id="zoom-in">+</button>
-		<button id="zoom-out">-</button>
-
 		<div class="folders-container">
 			<?php
 				$dirs = array('Holga 120N', 'Konica Autoreflex TC', 'Lomography ActionSampler', 'Lomography Fisheye 2', 'Other');
@@ -36,7 +33,7 @@
 					echo "<button class='folder-button' data-folder='$dir'>" . $dirs[$i] . "</button>";
 				
 					// create a div to display the photos
-					echo "<div class='photo-container-zoom' id='photos-$dir' style='display: none'>";
+					echo "<div class='photo-container' id='photos-$dir' style='display: none'>";
 				
 					// display all photos in the folder
 					foreach ($files as $file) {
@@ -52,6 +49,9 @@
 				}
 			?>
 		</div>
+		<div class="large-image-container">
+				<img class="large-image" src=""></img>
+		</div>
 
 	</main>
 
@@ -66,31 +66,36 @@
 
 				if (photoDiv.style.display === 'none') {
 					photoDiv.style.display = 'block';
+					button.style.color = "#fff";
+					button.style.backgroundColor = "#3c4043";
 				} else {
 					photoDiv.style.display = 'none';
+					button.style.color = "#3c4043";
+					button.style.backgroundColor = "#fff";
 				}
 			});
 		});
 
-		// add event listeners to the buttons to update the zoom level
-		const zoomInButton = document.getElementById('zoom-in');
-		const zoomOutButton = document.getElementById('zoom-out');
-		const photos = document.querySelectorAll('img');
+		const gallery = document.querySelector('.folders-container');
+		const largerImageContainer = document.querySelector('.large-image-container');
+		const largerImage = document.querySelector('.large-image');
+		const body = document.querySelector('body');
 
-		let zoomLevel = 1;
+		gallery.addEventListener('click', (event) => {
+			console.log("Check");
+			console.log(event.target.tagName);
+		if (event.target.tagName === 'IMG') {
+			largerImage.setAttribute('src', event.target.getAttribute('src'));
+			largerImageContainer.style.display = 'block';
+			body.classList.add('dimmed');
+		}
+		});
 
-		zoomInButton.addEventListener('click', () => {
-		zoomLevel += 0.1;
-		photos.forEach((photo) => {
-			photo.style.transform = `scale(${zoomLevel})`;
-		});
-		});
-
-		zoomOutButton.addEventListener('click', () => {
-		zoomLevel -= 0.1;
-		photos.forEach((photo) => {
-			photo.style.transform = `scale(${zoomLevel})`;
-		});
+		largerImageContainer.addEventListener('click', (event) => {
+		if (event.target === largerImageContainer) {
+			largerImageContainer.style.display = 'none';
+			body.classList.remove('dimmed');
+		}
 		});
 	</script>
 	  <footer>

@@ -12,7 +12,7 @@
       <nav>
 	<ul>
         	<li><a href="index.php">Home</a></li>
-		<li class="active"><a href="#">Projects</a></li>
+		      <li class="active"><a href="#">Projects</a></li>
         	<li><a href="notes.php">Notes</a></li>
         	<li><a href="resources.php">Resources</a></li>
       	</ul>
@@ -24,7 +24,7 @@
         <li><a href="#">Coding</a></li>
         <li><a href="photos.php">Art</a></li>
         <li><a href="#">Food</a></li>
-	<li><a href='#'>Other</a></li>
+	      <li><a href='#'>Other</a></li>
       </ul>
     </main>
     <footer>
